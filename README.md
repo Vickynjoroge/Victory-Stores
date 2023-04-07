@@ -1,5 +1,5 @@
 #Victory Stores
-Ping Pong application. Enter a number. It counts up to that number, replacing numbers divisible by 3 with "ping", numbers divisible by 5 with "pong" and numbers divisible by both with "ping pong".
+A simple online shopping app.
 
 ## Author
 - Victor Ngigi Njoroge.
