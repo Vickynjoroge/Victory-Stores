@@ -38,6 +38,11 @@ header{
   background-color: var(--bg-color);
   box-shadow: 0 1px 4px hsl(0 4%, 15% / 10%);
   z-index: 100;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .nav{
   display: flex;
@@ -45,10 +50,18 @@ header{
   justify-content: space-between;
   padding: 20px 0;
 }
+.nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+}
 .logo{
   font-size: 1.1rem;
   color: var(--text-color);
   font-weight: 400;
+  gap: 20px;
 }
 #cart-icon{
   font-size: 1.8rem;
@@ -229,4 +242,53 @@ header{
   .cart{
     width: 320px;
   }
+}
+.hero {
+  height: 500px;
+  background-image: url("https://t4.ftcdn.net/jpg/01/12/43/63/360_F_112436300_nj2zCEz94Le4TbasKaTJyuk67uU41kke.jpg");
+  background-size:cover;
+  display: flex;
+  flex-direction:column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+.hero h1 {
+  color: #450505;
+  font-size: 48px;
+  text-align: center;
+  text-shadow: 1px 1px #333;
+}
+.cta {
+  margin: 50px 0;
+  text-align: center;
+}
+.cta h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.cta p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.cta button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.cta button:hover {
+  background-color: #555;
+}
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+.footer p {
+  margin: 0;
 }
