@@ -21,7 +21,7 @@ if (document.readyState == "loading"){
 // Making funtion
 function ready(){
   // fetch products from server
-  fetch('http://localhost:3000/products')
+  fetch('http://localhost:3000/products/')
     .then(response => response.json())
     .then(data => {
       const productContainer = document.querySelector('.shop-content');
@@ -97,7 +97,7 @@ function quantityChanged(event) {
     }
   
     // Update the quantity on the server
-    fetch(`http://localhost:3000/cart/${productId}`, {
+    fetch(`http://localhost:3000/products/`), {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -105,7 +105,7 @@ function quantityChanged(event) {
       body: JSON.stringify({
         quantity: quantity,
       }),
-    })
+    }
       .then((response) => response.json())
       .then((data) => {
         // Update the total price and the quantity of the item in the cart box
@@ -127,13 +127,13 @@ function addCartClicked(event){
   var productid = shopProducts.getAttribute("data-id");
 
   // send a POST request to add the product to the cart on the server
-  fetch('http://localhost:3000/products', {
+  fetch('http://localhost:3000/products'), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ title: title, price: price, productid: productid })
-  })
+  }
   .then(response => response.json())
   .then(data => {
     // add the cart item to the UI
@@ -159,11 +159,14 @@ function addCartClicked(event){
       <i class='bx bxs-trash-alt cart-remove' ></i>
     `;
     cartShopBox.innerHTML = cartBoxContent;
-    cartItems.appendChild(cartShopBox);
-    cartShopBox.getElementsByClassName('cart-remove')[0]
+    cartItems.append(cartShopBox);
+    cartShopBox
+    .getElementsByClassName('cart-remove')[0]
     .addEventListener('click', removeCartItem );
-    cartShopBox.getElementsByClassName('cart-quantity')[0]
+    cartShopBox
+    .getElementsByClassName('cart-quantity')[0]
     .addEventListener('change', quantityChanged);
+
     updatetotal();
   })
   .catch(error => console.error('Error adding product to cart:', error));
@@ -171,7 +174,7 @@ function addCartClicked(event){
 
 // update Total
 function updatetotal() {
-  fetch('http://localhost:3000/products')
+  fetch(`http://localhost:3000/products/${price}`)
     .then(response => response.json())
     .then(data => {
       var total = 0;
@@ -184,3 +187,4 @@ function updatetotal() {
     })
     .catch(error => console.log(error));
 }
+// How to send a POST request to add the product to the cart on the server?   
